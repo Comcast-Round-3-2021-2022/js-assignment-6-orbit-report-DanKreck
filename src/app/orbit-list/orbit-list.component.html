@@ -8,12 +8,12 @@
     </tr>
     <tr class="data-row" *ngFor="let obj of satellites">
         <td>{{obj.name}}</td>
-        <td>{{obj.type}}</td>
+        <td [ngClass]= "{'warning': obj.isSpaceDebris()}">{{obj.type}}</td>
         <td>{{obj.operational}}</td>
         <td>{{obj.orbitType}}</td>
         <td>{{obj.launchDate}}</td>
     </tr>
-    
+    <ng-template #makeRed></ng-template>
 </table>
 
 <!-- TODO 2b: use *ngFor to display satellite data in the table -->
